@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admission Form</title>
+    <style>
+        /* General Reset & Background Styling */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #74b9ff, #0984e3);
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Box Model applied to the Main Form Container */
+        .form-container {
+            background-color: #ffffff;
+            width: 100%;
+            max-width: 600px;
+            padding: 35px; /* Padding inside the box */
+            margin: 0 auto; /* Centering with margins */
+            border-radius: 12px; /* Rounded corners */
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* Box shadow effect */
+            border-top: 6px solid #0984e3; /* Top border accent */
+        }
+
+        /* Text Effects for Headings */
+        h2 {
+            text-align: center;
+            color: #2d3436;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+            font-size: 24px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        /* Form Group Layout */
+        .form-group {
+            margin-bottom: 20px; /* Space between fields */
+        }
+
+        /* Appropriate Selectors for Labels */
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #636e72;
+            font-size: 14px;
+        }
+
+        /* Element Selectors for Inputs, Selects, and Textareas */
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px 15px; /* Box model padding */
+            border: 1px solid #dfe6e9; /* Subtle borders */
+            border-radius: 6px;
+            box-sizing: border-box; /* Includes padding & border in width */
+            font-size: 14px;
+            color: #2d3436;
+            transition: all 0.3s ease;
+        }
+
+        /* Textarea specific styling */
+        textarea {
+            resize: vertical;
+            height: 100px;
+        }
+
+        /* Pseudo-class Selector for Interactive Focus Effects */
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="tel"]:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #0984e3;
+            outline: none;
+            box-shadow: 0 0 8px rgba(9, 132, 227, 0.3);
+        }
+
+        /* Radio Group Alignment */
+        .radio-group {
+            display: flex;
+            gap: 20px;
+            margin-top: 5px;
+        }
+
+        .radio-group label {
+            font-weight: normal;
+            color: #2d3436;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* Submit Button Styling & Text Effects */
+        .submit-btn {
+            background-color: #0984e3;
+            color: white;
+            border: none;
+            padding: 14px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            width: 100%;
+            border-radius: 6px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Hover Effect for Button */
+        .submit-btn:hover {
+            background-color: #74b9ff;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>Student Admission Form</h2>
+        <form action="#" method="POST">
+            
+            <div class="form-group">
+                <label for="fullname">Full Name</label>
+                <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+            </div>
+
+            <div class="form-group">
+                <label>Gender</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="gender" value="male" required> Male</label>
+                    <label><input type="radio" name="gender" value="female"> Female</label>
+                    <label><input type="radio" name="gender" value="other"> Other</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="course">Select Course</label>
+                <select id="course" name="course" required>
+                    <option value="" disabled selected>-- Choose a course --</option>
+                    <option value="cs">Computer Science</option>
+                    <option value="eng">Engineering</option>
+                    <option value="ba">Business Administration</option>
+                    <option value="arts">Fine Arts</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="address">Address</label>
+                <textarea id="address" name="address" placeholder="Enter your residential address" required></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Submit Application</button>
+        </form>
+    </div>
+
+</body>
+</html>
